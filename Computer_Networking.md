@@ -599,7 +599,7 @@ Also, DNS uses UDP is because it is a connectionless protocol, meaning that it d
 #### DNS Spoofing 
 DNS Spoofing means getting a wrong entry or IP Address of the requested site of the DNS Server. Attackers find out the flaws in the DNS system and take control and will redirect to a malicious website. 
 
-To Prevent From DNS Spoofing – 
+***To Prevent From DNS Spoofing –***
  
 1. **DNS Security Extensions (DNSSEC)** is used to add an additional layer of security in the DNS resolution process to prevent security threats. DNSSEC protects against such attacks by digitally ‘signing’ data so you can be assured it is valid. 
 2. **Implement Source Authentication**: Source authentication can be used to verify that the source of the DNS request is legitimate. This can be achieved using techniques such as **IPsec (Internet Protocol Security)** or **TLS (Transport Layer Security)** to authenticate the requestor and ensure that the request has not been tampered with in transit.
