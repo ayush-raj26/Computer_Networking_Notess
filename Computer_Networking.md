@@ -615,3 +615,55 @@ DNS Spoofing means getting a wrong entry or IP Address of the requested site of 
 4. **Fast flux**: An attacker will typically spoof his IP address while performing an attack. Fast flux is a technique to constantly change location-based data in order to hide where exactly the attack is coming from. To mask the real location.
 5. **Reflected attacks**: Attackers will send thousands of queries while spoofing their own IP address and using the victim’s source address.
 6. **Reflective amplification DoS**: When the size of the answer is considerably larger than the query itself, a flux is triggered, causing an amplification effect. This generally uses the same method as a reflected attack, but this attack will overwhelm the user’s system’s infrastructure further. 
+
+### Difference between http:// and https://
+HTTP provides a standard between a web browser and web server to establish communication. It is a set of rules for transferring data from one computer to another. Data such as text, images, and other multimedia files are shared on the World Wide Web.
+
+**Characteristics of http**
+* HTTP is IP based communication protocol that is used to deliver data from server to client or vice-versa.
+* Any type of content can be exchanged as long as the server and client are compatible with it. 
+* It is a request and response protocol based on client and server requirements. 
+
+HTTPS is a combination of the Hypertext Transfer Protocol with the SSL (Secure Socket Layer) / TLS (Transport Layer Security) convention to supply encrypted communication and secure distinguishing proof of an arranged web server. HTTPS is more secure than HTTP because HTTPS is certified by the SSL(Secure Socket Layer).
+
+**Characteristics of https**
+* HTTPS encrypts all message substance, including the HTTP headers and the request/response data. The verification perspective of HTTPS requires a trusted third party to sign server-side digital certificates.
+* HTTPS is presently utilized more frequently by web clients than the first non-secure HTTP, fundamentally to ensure page genuineness on all sorts of websites, secure accounts and to keep client communications.
+
+| Feature | HTTP | HTTPS |
+|---------|------|-------|
+| **Port Number** | 80 | 443 |
+| **Security** | Hyper-text exchanged using HTTP goes as plain text, making it insecure. | HTTPS is considered to be secure due to encryption and the use of certificates. |
+| **Layer** | Application Layer | Transport Layer |
+| **Speed** | Faster | Slower |
+| **Data Integrity** | Does not use data hashtags | Uses data hashtags to secure data |
+| **Usage** | Transfer of text, video, and images via web pages | Secure transfer of data via a network |
+
+### How DHCP (Dynamic Host Configuration Protocol) server dynamically assigns IP address to a host?
+It is an application layer protocol used by hosts for obtaining network setup information.
+* *Dynamic* – Automatically
+* *Host* – Any computer that is connected to the network
+* *Configuration* – To configure a host means to provide network information(IP address, subnet mask, Gateway address) to a host
+* *Protocol* – Set of rules
+
+**Configuring a host using DHCP :**
+To configure a host, we require the following things: 
+1. Leased IP address – IP address to a host that lasts for a particular duration which goes for a few hours, a few days, or a few weeks.
+2. Subnet Mask – The host can know on which network it is on.
+3. Gateway address – The Gateway is the Internet Service Provider that connects users to the internet. The Gateway address lets the host know where the gateway is to connect to the internet.
+
+**DHCP Entities:**
+1. DHCP server: It automatically provides network information(IP address, subnet mask, gateway address) on lease. Once the duration is expired, that network information can be assigned to another machine.  It also maintains the data storage which stores the available IP addresses.
+2. DHCP client: Any node which requests an IP address allocation to a network is considered a DHCP client.
+3. DHCP Relay Agent: In case, we have only one DHCP server for multiple LAN’s then this Agent which presents in every network forwards the DHCP request to the DHCP server. So, using DHCP Relay Agent we can configure multiple LANs with a single server.
+
+**How DHCP server assigns an IP address to a host?**
+1. *DHCPDISCOVER*: When a new node is connected to the network, it broadcasts the DHCPDISCOVER message which contains the source address as 0.0.0.0 to every node on the network including the server. DHCP server on receiving the message returns the DHCPOFFER message to the requested host which contains the server address and new IP address to the node.
+2.DHCPOFFER: If there are multiple servers on the network, the host receives multiple DHCPOFFER messages. It is up to the host to select a particular message. 
+3. DHCPREQUEST:  The requested host on receiving the offer message, again broadcasts the DHCPREQUEST message on the network with the address of the server whose offer message is accepted by the host. The server which pertains to that server address sent by the host checks whether the address to be assigned to the node is available in the data storage. 
+4. DHCPACK: If the address is assigned, it marks the IP address in the storage as unavailable to ensure consistency. Now, the server sends a DHCPACK packet to the requested host which contains network information(IP address, subnet mask, gateway address). In case, if the address is assigned to another machine meanwhile, then the server sends the packet DHCPNAK to the requested host indicating that the IP address is assigned to some other machine. 
+5. DHCPRELEASE: And finally, If the host wants to move to another network or if it has finished its work, it sends the DHCPRELEASE packet to the server indicating that it wants to disconnect. Then the server marks the IP address as available in the storage so that it can be assigned to other machines. 
+
+## Very Very Important Topic - [**How a Packet Travels**](https://www.youtube.com/watch?v=rYodcvhh7b8)
+
+
